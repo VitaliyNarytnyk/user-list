@@ -11,12 +11,14 @@
 			<div class="home__title title">
 				List of users
 			</div>
-			<app-card></app-card>
-			<app-card></app-card>
-			<app-card></app-card>
-			<app-card></app-card>
-			<app-card></app-card>
-			<app-card></app-card>
+			<div class="home__cards" *ngIf="cards$ | async as cards; else loading">
+				<app-card *ngFor="let card of cards" [card]="card"></app-card>
+			</div>
+
 		</div>
 	</div>
 </div>
+
+<ng-template #loading>
+	<p style="text-align: center; font-size: 24px; font-weight: 700;">Loading...</p>
+</ng-template>

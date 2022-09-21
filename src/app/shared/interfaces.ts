@@ -10,6 +10,9 @@ export interface User {
 			zipcode: string
 		}
 	},
+	company: {
+		name: string
+	},
 	phone: string,
 	website: string
 }
