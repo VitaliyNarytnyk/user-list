@@ -16,4 +16,8 @@ export class CardsService {
 		return this.http.get<User[]>(`${environment.jsonUrl}/users`)
 	}
 
+	getById(id: string): Observable<User> {
+		return this.http.get<User>(`${environment.jsonUrl}/users/${id}`)
+	}
+
 }

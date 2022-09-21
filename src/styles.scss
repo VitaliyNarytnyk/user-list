@@ -58,3 +58,8 @@ a {
 	text-decoration: none;
 	color: #72B63B
 }
+
+button:disabled {
+	cursor: not-allowed;
+	background-color: #ccc;
+}

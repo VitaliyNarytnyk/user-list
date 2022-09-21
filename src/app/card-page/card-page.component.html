@@ -8,9 +8,9 @@
 		<div class="card__content">
 			<div class="card__header">
 				<div class="card__title title">User profile</div>
-				<button class="card__btn btn">Edit</button>
+				<button class="card__btn btn" (click)="edit()">Edit</button>
 			</div>
-			<form action="" class="card__form form-control" [formGroup]="form" (ngSubmit)="submit()">
+			<form aria-readonly="true" action="" class="card__form form-control" [formGroup]="form" (ngSubmit)="submit()">
 				<div class="form-control__body">
 					<div class="form-control__input">
 						<label for="name">Name</label>
@@ -35,11 +35,11 @@
 					</div>
 					<div class="form-control__input">
 						<label for="zipcode">Zip code</label>
-						<input type="number" id="zipcode" formControlName="zipcode">
+						<input type="text" id="zipcode" formControlName="zipcode">
 					</div>
 					<div class="form-control__input">
 						<label for="phone">Phone</label>
-						<input type="number" id="phone" formControlName="phone">
+						<input type="text" id="phone" formControlName="phone">
 						<div class="validation"></div>
 					</div>
 					<div class="form-control__input">
@@ -53,7 +53,7 @@
 					</div>
 				</div>
 				<div class="form-control__actions">
-					<button type="submit" class="form-sontrol__btn btn">Send</button>
+					<button type="submit" class="form-sontrol__btn btn" [disabled]="isEditDisable">Send</button>
 				</div>
 			</form>
 
