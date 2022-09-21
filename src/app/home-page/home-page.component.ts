@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { CardsService } from '../shared/cards.service';
 import { User } from '../shared/interfaces';
 
@@ -9,16 +9,32 @@ import { User } from '../shared/interfaces';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent implements OnInit, OnDestroy {
 
-  cards$!: Observable<User[]>
+  cards: User[] = []
+  cSub!: Subscription
 
   constructor(
     private cardsService: CardsService
   ) { }
 
   ngOnInit(): void {
-    this.cards$ = this.cardsService.getAll()
+    this.cSub = this.cardsService.getAll().subscribe(cards => {
+      this.cards = cards
+    })
   }
 
+  ngOnDestroy(): void {
+    if (this.cSub) {
+      this.cSub.unsubscribe()
+    }
+  }
+
+  sortByCity() {
+    this.cards.sort((a, b) => (a.address.city > b.address.city) ? 1 : -1)
+  }
+
+  sortByCompany() {
+    this.cards.sort((a, b) => (a.company.name > b.company.name) ? 1 : -1)
+  }
 }

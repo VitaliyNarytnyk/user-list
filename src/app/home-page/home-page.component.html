@@ -2,8 +2,8 @@
 	<div class="home__menu menu">
 		<div class="home__actions">
 			<span>Sort:</span>
-			<button class="home__btn btn">by city</button>
-			<button class="home__btn btn">by company</button>
+			<button class="home__btn btn" (click)="sortByCity()">by city</button>
+			<button class="home__btn btn" (click)="sortByCompany()">by company</button>
 		</div>
 	</div>
 	<div class="container">
@@ -11,7 +11,7 @@
 			<div class="home__title title">
 				List of users
 			</div>
-			<div class="home__cards" *ngIf="cards$ | async as cards; else loading">
+			<div class="home__cards" *ngIf="cards; else loading">
 				<app-card *ngFor="let card of cards" [card]="card"></app-card>
 			</div>
 

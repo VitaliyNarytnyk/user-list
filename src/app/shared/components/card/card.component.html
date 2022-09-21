@@ -11,6 +11,6 @@
 		<p>Company:</p>
 		<span>{{ card.company.name }}</span>
 		<span class="spacer"></span>
-		<a href="#">Detail</a>
+		<a [routerLink]="['/card', card.id]" href="#">Detail</a>
 	</div>
 </div>
