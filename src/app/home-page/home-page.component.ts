@@ -35,6 +35,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
 
   sortByCompany() {
-    this.cards.sort((a, b) => (a.company.name > b.company.name) ? 1 : -1)
+    this.cards.sort((a, b) => (a.company!.name > b.company!.name) ? 1 : -1)
   }
 }

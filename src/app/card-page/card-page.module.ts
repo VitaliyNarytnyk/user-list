@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { CardPageComponent } from './card-page.component';
 import { CardPageRoutingModule } from './card-page-routing.module';
 
@@ -9,7 +11,8 @@ import { CardPageRoutingModule } from './card-page-routing.module';
   declarations: [CardPageComponent],
   imports: [
     CommonModule,
-    CardPageRoutingModule
+    CardPageRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [CardPageComponent]
 })

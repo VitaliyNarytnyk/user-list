@@ -10,50 +10,53 @@
 				<div class="card__title title">User profile</div>
 				<button class="card__btn btn">Edit</button>
 			</div>
-			<form action="" class="card__form form-control">
-				<div class="form-control__input">
-					<label for="name">Name</label>
-					<input type="text" id="name">
+			<form action="" class="card__form form-control" [formGroup]="form" (ngSubmit)="submit()">
+				<div class="form-control__body">
+					<div class="form-control__input">
+						<label for="name">Name</label>
+						<input type="text" id="name" formControlName="name">
+					</div>
+					<div class="form-control__input">
+						<label for="username">User name</label>
+						<input type="text" id="username" formControlName="username">
+					</div>
+					<div class="form-control__input">
+						<label for="email">E-mail</label>
+						<input type="email" id="email" formControlName="email">
+						<div class="validation"></div>
+					</div>
+					<div class="form-control__input">
+						<label for="street">Street</label>
+						<input type="text" id="street" formControlName="street">
+					</div>
+					<div class="form-control__input">
+						<label for="city">City</label>
+						<input type="text" id="city" formControlName="city">
+					</div>
+					<div class="form-control__input">
+						<label for="zipcode">Zip code</label>
+						<input type="number" id="zipcode" formControlName="zipcode">
+					</div>
+					<div class="form-control__input">
+						<label for="phone">Phone</label>
+						<input type="number" id="phone" formControlName="phone">
+						<div class="validation"></div>
+					</div>
+					<div class="form-control__input">
+						<label for="website">Website</label>
+						<input type="text" id="website" formControlName="website">
+						<div class="validation"></div>
+					</div>
+					<div class="form-control__text">
+						<label for="comment">Comment</label>
+						<textarea name="comment" id="comment" cols="30" rows="10" formControlName="comment"></textarea>
+					</div>
 				</div>
-				<div class="form-control__input">
-					<label for="user- name">User name</label>
-					<input type="text" id="user-name">
-				</div>
-				<div class="form-control__input">
-					<label for="email">E-mail</label>
-					<input type="email" id="email">
-					<div class="validation"></div>
-				</div>
-				<div class="form-control__input">
-					<label for="street">Street</label>
-					<input type="text" id="street">
-				</div>
-				<div class="form-control__input">
-					<label for="city">City</label>
-					<input type="text" id="city">
-				</div>
-				<div class="form-control__input">
-					<label for="code">Zip code</label>
-					<input type="number" id="code">
-				</div>
-				<div class="form-control__input">
-					<label for="phone">Phone</label>
-					<input type="number" id="phone">
-					<div class="validation"></div>
-				</div>
-				<div class="form-control__input">
-					<label for="website">Website</label>
-					<input type="text" id="website">
-					<div class="validation"></div>
-				</div>
-				<div class="form-control__text">
-					<label for="name">Comment</label>
-					<textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+				<div class="form-control__actions">
+					<button type="submit" class="form-sontrol__btn btn">Send</button>
 				</div>
 			</form>
-			<div class="card__footer">
-				<button class="card__btn btn">Send</button>
-			</div>
+
 		</div>
 	</div>
 </div>

@@ -1,18 +1,17 @@
 export interface User {
-	id: number,
+	id?: number,
 	name: string,
 	username: string,
 	email: string,
 	address: {
 		city: string,
-		geo: {
-			street: string,
-			zipcode: string
-		}
+		street: string,
+		zipcode: string
 	},
-	company: {
+	company?: {
 		name: string
 	},
 	phone: string,
-	website: string
+	website: string,
+	comment?: string
 }
