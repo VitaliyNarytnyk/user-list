@@ -1,0 +1,50 @@
+.card {
+	display: flex;
+
+	&__actions {
+		text-align: center;
+		padding: 15px 0;
+	}
+
+	&__content {
+		margin: 0px 0px 50px 0px;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0px 0px 15px 0px;
+	}
+
+	&__btn {
+		margin: auto 0;
+	}
+
+	&__form {
+		border: 1px solid #AEAEAE;
+		border-radius: 8px;
+		padding: 20px;
+	}
+
+	&__footer {
+		display: flex;
+		justify-content: end;
+	}
+}
+
+.form-control {
+	margin: 0px 0px 15px 0px;
+
+	&__input {
+		display: flex;
+		flex-direction: column;
+		max-width: 300px;
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+	}
+}
